@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>My A-Frame WebXR Scene</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <img id="grass" src="grass.jpg" />
+            <a-asset-item id="rabbit" src="rabbit.glb"></a-asset-item>
+            <a-asset-item id="tree" src="Tree.glb"></a-asset-item>
+            <a-asset-item id="rock" src="rock.glb"></a-asset-item>
+            <a-asset-item id="waterfall" src="Waterfall.glb"></a-asset-item>
+            <audio id="air" src="sound.mp3"></audio>
+            <audio id="waterfallsound" src="waterfallsound.mp3"></audio>
+        </a-assets>
+
+        <a-sky color="#87CEEB"></a-sky>
+        <a-plane src="#grass" rotation="-90 0 0" width="20" height="20" repeat="10 10"></a-plane>
+        <a-entity text="value: Welcome to relaxing forest!; color: #FFD500; align: center" position="0 3 -4"
+            scale="6 6 6"
+            animation="property: object3D.position.y; to: 3.2; dir: alternate; dur: 2000; loop: true"></a-entity>
+
+        <a-entity gltf-model="#rabbit" position="0 0.5 -4" scale="0.5 0.5 0.5"
+            animation="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true"></a-entity>
+        <a-entity gltf-model="#rabbit" position="2 0.5 -4" scale="0.5 0.5 0.5"
+            animation="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true"></a-entity>
+        <a-entity gltf-model="#tree" position="-9 0 -9" scale="0.01 0.01 0.01"></a-entity>
+        <a-entity gltf-model="#tree" position="-9 0 -6" scale="0.01 0.01 0.01"></a-entity>
+        <a-entity gltf-model="#tree" position="-9 0 -3" scale="0.01 0.01 0.01"></a-entity>
+        <a-entity gltf-model="#tree" position="-9 0 0" scale="0.01 0.01 0.01"></a-entity>
+        <a-entity gltf-model="#tree" position="-9 0 3" scale="0.01 0.01 0.01"></a-entity>
+        <a-entity gltf-model="#tree" position="-9 0 6" scale="0.01 0.01 0.01"></a-entity>
+        <a-entity gltf-model="#tree" position="-9 0 9" scale="0.01 0.01 0.01"></a-entity>
+        <a-entity gltf-model="#rock" position="9 -1.3 -9" scale="1 1 1" rotation="0 135 0"></a-entity>
+        <a-entity gltf-model="#rock" position="9 -1.3 -6" scale="1 1 1" rotation="0 270 0"></a-entity>
+        <a-entity gltf-model="#rock" position="9 -1.3 -1" scale="1 1 1" rotation="0 270 0"></a-entity>
+        <a-entity gltf-model="#rock" position="9 -1.3 2" scale="1 1 1" rotation="0 270 0"></a-entity>
+        <a-entity gltf-model="#rock" position="9 -1.3 5" scale="1 1 1" rotation="0 270 0"></a-entity>
+
+        <a-entity position="1.5 -2.2 -6">
+            <a-entity gltf-model="#waterfall" scale="0.09 0.09 0.09" rotation="1 360 0"></a-entity>
+            <a-sound src="#waterfallsound" autoplay="true" loop="true" positional="true" distanceModel="linear"
+                maxDistance="10" volume="5"></a-sound>
+        </a-entity>
+        <a-light type="point" intensity="2" position="2 4 4"></a-light>
+        <a-sound src="#air" autoplay="true" loop="true"></a-sound>
+    </a-scene>
+</body>
+
+</html>
